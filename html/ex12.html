@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>테이블 태그의 속성들</title>
+    <!-- border : 테두리선의 굵기 -->
+    <!-- width : 넓이 -->
+    <!-- height : 높이 -->
+    <!-- colspan : col(가로 셀)끼리 병합 -->
+    <!-- rowspan : row(세로 셀)끼리 병합 -->
+    <!-- font태그의 color석상 : 글씨 색상 -->
+    <!-- bgcolor : 배경속성 -->
+    <!-- align : 정렬(left,center,right) -->
+  </head>
+  <body>
+    <table border="1px" width="500px" height="300px">
+      <thead>
+        <tr>
+          <!-- 제목은 가운데 정렬 기본 -->
+          <th bgcolor="skyblue"><font color="white">제목셀1</font></th>
+          <th bgcolor="skyblue"><font color="white">제목셀1</font></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- 기본 왼쪽정렬 -->
+          <td align="center">데이터셀1</td>
+          <td align="center">데이터셀2</td>
+        </tr>
+        <tr>
+          <td align="center">데이터셀1</td>
+          <td align="center">데이터셀2</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
