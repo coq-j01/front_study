@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>css연습문제</title>
+    <!-- div 배경이미지 위에 글자 배치하기. -->
+    <style>
+      div {
+        position: relative;
+        background-image: url(cosmos.jpg);
+        width: 600px;
+        height: 400px;
+      }
+      #txt {
+        position: absolute;
+        color: aqua;
+        background-color: white;
+        width: 200px;
+        top: 30%;
+        left: 30%;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Div배경이미지 위에 글자배치</h3>
+    <div>
+      <h4 id="txt">코스모스 가을향기~</h4>
+    </div>
+  </body>
+</html>
