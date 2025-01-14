@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>다음 로그인화면</title>
+    <style>
+      h1 {
+        text-align: center;
+      }
+      #login {
+        border: 2px solid lightgray;
+        margin-left: 25%;
+        margin-right: 25%;
+        padding: 5%;
+      }
+      #iconset {
+        display: flex;
+        flex-direction: row;
+        margin-top: 6%;
+      }
+      .input1 {
+        margin-top: 5%;
+        text-align: center;
+      }
+      .input2 {
+        margin-top: 5%;
+        text-align: center;
+      }
+      .icon1 {
+        width: 18px;
+        height: 20px;
+        display: inline-block;
+        background: url("ico_comm.png") no-repeat 0 0;
+        background-size: 250px 250px;
+        background-position: -40px 0; /* left/top */
+        /* margin-left: 10%; */
+        margin-right: 10px;
+      }
+      .icon2 {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background: url("daum_ico_login.png") no-repeat 0 0;
+        background-size: 200px 100px;
+        background-position: -15px 0; /* left/top */
+        margin-top: 2px;
+      }
+      .icon3 {
+        width: 18px;
+        height: 20px;
+        display: inline-block;
+        background: url("ico_comm.png") no-repeat 0 0;
+        background-size: 250px 250px;
+        background-position: 0px -38px; /* left/top */
+        /* margin-left: 10%; */
+        margin-right: 10px;
+      }
+      #txt {
+        margin: 0;
+        color: gray;
+        font-size: smaller;
+      }
+      #box {
+        background: transparent;
+        width: 100%;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+      }
+      #button {
+        background-color: rgba(255, 221, 0, 0.979);
+        /* width: 80%; */
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 8%;
+      }
+      #button2 {
+        background-color: rgba(215, 215, 213, 0.979);
+        height: 40px;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2%;
+      }
+      #button3 {
+        background-color: rgba(215, 215, 213, 0.979);
+        background-image: url(daum.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        height: 100px;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 8%;
+      }
+      #lline {
+        border: 1px solid lightgray;
+        margin-top: 6%;
+        margin-right: 2%;
+        width: 43%;
+        height: 0;
+      }
+      #rline {
+        border: 1px solid lightgray;
+        margin-top: 6%;
+        margin-left: 2%;
+        width: 43%;
+        height: 0;
+      }
+      #or {
+        display: flex;
+        flex-direction: row;
+        color: gray;
+        font-size: smaller;
+      }
+      #row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: small;
+        margin-top: 6%;
+      }
+      #row2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: small;
+      }
+      #footer {
+        text-align: center;
+        font-size: small;
+        height: 50px;
+        line-height: 50px;
+        margin-top: 10%;
+      }
+      #footer a {
+        margin: 5px;
+      }
+      #footer a:link {
+        color: black;
+      }
+      #footer a:visited {
+        color: black;
+      }
+      #row a:link {
+        color: black;
+      }
+      #row a:visited {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>kakao</h1>
+    <div id="login">
+      <div class="input1">
+        <input
+          type="text"
+          placeholder="카카오메일 아이디, 이메일, 전화번호"
+          id="box"
+        />
+      </div>
+      <div class="input2">
+        <input type="text" placeholder="비밀번호" id="box" />
+      </div>
+      <div id="iconset">
+        <div class="icon1"></div>
+        <p id="txt">간편로그인 정보 저장</p>
+        <div class="icon2"></div>
+      </div>
+      <div id="button">로그인</div>
+      <div id="or">
+        <p id="lline"></p>
+        <p>또는</p>
+        <p id="rline"></p>
+      </div>
+      <div id="button2">QR코드 로그인</div>
+      <div id="row" font-size="small">
+        <a href="#">회원가입</a>
+        <div id="row2">
+          <a href="#">계정 찾기| </a>
+          <a href="#"> 비밀번호 찾기</a>
+        </div>
+      </div>
+      <div id="button3"></div>
+    </div>
+    <div class="box" id="footer">
+      <a href="#"
+        >한국어
+        <div class="icon3"></div
+      ></a>
+      <a href="#">이용약관</a>
+      <a href="#">개인정보 처리방침</a>
+      <a href="#">고객센터</a>
+      <a href="#">Kakao Crop.</a>
+    </div>
+  </body>
+</html>
