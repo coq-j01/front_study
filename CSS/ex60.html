@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>연습문제-영화웹페이지</title>
+    <!-- https://www.megabox.co.kr/movie -->
+    <style>
+      /* 기본 스타일 초기화 */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      .nav1 {
+        /* 스티키 */
+        position: sticky;
+        top: 0;
+
+        background-color: #eeeeee;
+        padding: 0;
+        width: 100%;
+      }
+      .nav2 {
+        background-color: white;
+        padding: 0;
+      }
+
+      .nav-menu {
+        list-style: none;
+        margin: 0;
+        margin-left: 10%;
+        padding: 0;
+        display: flex;
+      }
+      .nav2-menu {
+        list-style: none;
+        margin: 0;
+        margin-left: 10%;
+        padding: 0;
+        display: flex;
+        white-space: nowrap;
+      }
+
+      .nav-item {
+        position: relative;
+      }
+      .nav2-item {
+        position: relative;
+        border-right: 2px solid lightgray;
+        border-top: 2px solid lightgray;
+        border-bottom: 2px solid rgb(70, 8, 142);
+        width: 18%;
+        font-size: 15px;
+        height: 60px;
+        text-align: center;
+      }
+      .nav2-select {
+        position: relative;
+        border-top: 2px solid rgb(70, 8, 142);
+        border-left: 2px solid rgb(70, 8, 142);
+        border-right: 2px solid rgb(70, 8, 142);
+        width: 18%;
+        font-size: 15px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+      }
+
+      .nav2-item > a {
+        display: block;
+        padding: 15px 20px;
+        color: black;
+        text-decoration: none;
+      }
+
+      .nav-item > a {
+        display: block;
+        padding: 15px 20px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+      }
+
+      .nav-item > a:hover {
+        background-color: #555;
+      }
+
+      /* 드롭다운 메뉴 */
+      .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        background-color: #444;
+        display: none;
+        z-index: 1000;
+      }
+
+      .dropdown li {
+        width: 200px;
+      }
+
+      .dropdown a {
+        display: block;
+        padding: 10px 15px;
+        color: white;
+        text-decoration: none;
+      }
+
+      .dropdown a:hover {
+        background-color: #555;
+      }
+
+      /* 커서가 올라갔을 때 드롭다운 표시 */
+      .nav-item:hover .dropdown {
+        display: block;
+      }
+      .poster {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        display: block;
+      }
+      .container {
+        position: relative;
+        width: 220px;
+        height: 320px;
+        margin-left: 5%;
+        padding: 0;
+      }
+      .con {
+        margin-left: 5%;
+        margin-top: 3%;
+        margin-bottom: 3%;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        font-size: 15px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .container:hover .overlay {
+        opacity: 1;
+      }
+
+      #top-container {
+        display: flex;
+        justify-content: space-between; /* 왼쪽과 오른쪽 요소 사이에 공간을 둡니다 */
+        align-items: center; /* 세로 정렬을 맞추기 위해 사용 */
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 10px;
+      }
+
+      #name {
+        margin-left: 5%;
+        margin-top: 5%;
+        display: flex;
+        align-items: center;
+        height: 20px;
+      }
+      #name2 {
+        margin-left: 10px;
+        font-size: 16px;
+        white-space: nowrap;
+      }
+      #name3 {
+        width: 30px;
+      }
+      #row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 10%;
+        margin-right: 10%;
+        white-space: nowrap;
+      }
+      #row2 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+      #row h3 {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 0;
+        font-size: 25px;
+      }
+      #row3 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 30px;
+        /* margin-left: 10%;
+        margin-right: 10%; */
+      }
+
+      #row4 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      #col {
+        display: flex;
+        flex-direction: column;
+      }
+      .set {
+        white-space: nowrap;
+        margin-right: 15px;
+      }
+      .search {
+        display: flex;
+        border: 1px solid lightgray;
+        align-items: center;
+        margin-top: 5%;
+        width: 200px;
+        height: 40px;
+      }
+      .icon1 {
+        width: 83px;
+        height: 20px;
+        display: inline-block;
+        background: url("btn-on-air.png") no-repeat 0 0;
+        background-size: 30px 40px;
+        background-position: 0 0; /* left/top */
+        margin-left: 10%;
+      }
+      #iconset1 {
+        margin-right: 10px;
+        margin-top: 20px;
+        height: 30px;
+      }
+      #iconset2 {
+        margin-left: 10px;
+        margin-top: 20px;
+        height: 30px;
+      }
+      #iconset3 {
+        width: 20px;
+        height: 30px;
+      }
+      h1 {
+        margin-left: 10%;
+      }
+      #between {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        /* align-items: center; */
+      }
+      #center {
+        display: flex;
+        justify-content: center;
+      }
+      .center {
+        display: block;
+        margin-top: 20px;
+        width: 180px;
+        height: 80px;
+      }
+      #txt {
+        margin-left: 5%;
+        font-size: 13px;
+      }
+      #txt2 {
+        font-size: 14px;
+        margin: 0;
+        padding: 0;
+      }
+      #txt3 {
+        font-size: 14px;
+        margin: 0;
+        margin-left: 5%;
+        padding: 0;
+      }
+      .btn1 {
+        border: 1px solid gray;
+        text-align: center;
+        margin-left: 5%;
+        line-height: 40px;
+        width: 70px;
+        height: 35px;
+        border-radius: 5px;
+        font-size: 12px;
+      }
+      .btn2 {
+        border: 1px solid rgb(70, 8, 142);
+        background-color: rgb(70, 8, 142);
+        color: white;
+        text-align: center;
+        margin-left: 5%;
+        line-height: 40px;
+        width: 70px;
+        height: 35px;
+        border-radius: 5px;
+      }
+      .btn3 {
+        background-color: rgb(70, 8, 142);
+        border: 1px solid rgb(70, 8, 142);
+        background-image: url(db_btn.png);
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: center;
+        margin-left: 5%;
+        text-align: center;
+        line-height: 40px;
+        width: 70px;
+        height: 35px;
+        border-radius: 5px;
+      }
+      .btn4 {
+        background-color: rgb(70, 8, 142);
+        border: 1px solid rgb(70, 8, 142);
+        color: white;
+        text-align: center;
+        margin-left: 5%;
+        line-height: 40px;
+        width: 150px;
+        height: 35px;
+        border-radius: 5px;
+      }
+      #line {
+        border: 1px solid rgb(70, 8, 142);
+        height: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="top-container">
+      <div id="between">
+        <div id="col">
+          <div id="row">
+            <p>VIP LOUNGE</p>
+            <p>멤버십</p>
+            <p>고객센터</p>
+          </div>
+          <div id="row">
+            <img src="ico-sitemap.png" alt="menu" id="iconset1" />
+            <img src="ico-search.png" alt="menu" id="iconset1" />
+            <h3>영화</h3>
+            <h3>예매</h3>
+            <h3>극장</h3>
+          </div>
+        </div>
+        <img src="maga box.png" alt="메가박스" class="center" />
+        <div id="col">
+          <div id="row">
+            <p>로그인</p>
+            <p>회원가입</p>
+            <p>빠른예매</p>
+          </div>
+          <div id="row">
+            <h3>이벤트</h3>
+            <h3>스토어</h3>
+            <h3>혜택</h3>
+            <img src="ico-schedule.png" alt="menu" id="iconset2" />
+            <img src="ico-mymega.png" alt="menu" id="iconset2" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="line"></div>
+    <nav class="nav1">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="#"><img src="homeicon.png" alt="home" /></a>
+        </li>
+        <li class="nav-item">
+          <a href="#">영화</a>
+        </li>
+        <li class="nav-item">
+          <a href="#">전체영화</a>
+        </li>
+      </ul>
+    </nav>
+    <h1>전체영화</h1>
+    <nav class="nav2">
+      <ul class="nav2-menu">
+        <li class="nav2-select">
+          <a href="http://127.0.0.1:5500/ex60.html">박스오피스</a>
+        </li>
+        <li class="nav2-item">
+          <a href="#">상영예정작</a>
+        </li>
+        <li class="nav2-item">
+          <a href="#">단독</a>
+        </li>
+        <li class="nav2-item">
+          <a href="#">필름소사이어티</a>
+        </li>
+        <li class="nav2-item">
+          <a href="#">클래식소사이어티</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="row">
+      <div id="row3">
+        <div class="icon1"></div>
+        <p id="txt2">개봉작만</p>
+        <p id="txt3">93개의 영화가 검색되었습니다.</p>
+      </div>
+      <div class="search" id="row4">
+        <p>영화명 검색</p>
+        <img src="ico-search.png" alt="돋보기" id="iconset3" />
+      </div>
+    </div>
+    <div id="row2">
+      <div class="con">
+        <div class="container">
+          <img src="img1.jpg" alt="1" class="poster" />
+          <div class="overlay">
+            "연주할 때만 느껴지는 감정이었거든. 그게 널 만나면 느껴져" 유학
+            중이던 피아니스트 유준은 팔목 치료를 위해 한국에 교환 학생으로 오게
+            된다. 학교에 처음 간 그날, 신비로운 피아노 선율에 이끌려 도착한
+            연습실에서
+          </div>
+        </div>
+        <div id="name">
+          <img src="all.png" alt="all" id="name3" />
+          <h3 id="name2">말할 수 없는 비밀</h3>
+        </div>
+        <p id="txt">예매율 30.3% | 개봉일 2025.01.28</p>
+        <div id="row4">
+          <div class="btn1">
+            <img src="ico-heart.png" alt="" width="13px" />658
+          </div>
+          <div class="btn2">예매</div>
+          <div class="btn3"></div>
+        </div>
+      </div>
+      <div class="con">
+        <div class="container">
+          <img src="img2.jpg" alt="2" class="poster" />
+          <div class="overlay">
+            ‘유니아’ 수녀(송혜교)는 ‘희준’(문우진)의 몸에 숨어든 악령이 12형상
+            중 하나라고 확신한다. 당장 올 수 없는 구마 사제를 기다리다가
+            부마자가 희생될 것이 분명한 상황. 결국 ‘유니
+          </div>
+        </div>
+        <div id="name">
+          <img src="15.png" alt="all" id="name3" />
+          <h3 id="name2">검은 수녀들</h3>
+        </div>
+        <p id="txt">예매율 13% | 개봉일 2025.01.24</p>
+        <div id="row4">
+          <div class="btn1">
+            <img src="ico-heart.png" alt="" width="13px" />317
+          </div>
+          <div class="btn2">예매</div>
+          <div class="btn3"></div>
+        </div>
+      </div>
+      <div class="con">
+        <div class="container">
+          <img src="img3.jpg" alt="3" class="poster" />
+          <div class="overlay">
+            'HITMAN IS BACK!'대한민국을 표복절도하게 만든 암살요원, 이번엔
+            '암살요인 준'으로 돌아왔다! 욱해서 그린 웹툰 '암살요원 준'의
+            성공으로 잠깐 흥행 작가가 된 '준'은 시즌2 연재 시작과 동시에
+            '뇌절작가'로 전락하
+          </div>
+        </div>
+        <div id="name">
+          <img src="15.png" alt="15" id="name3" />
+          <h3 id="name2">히트맨2</h3>
+        </div>
+        <p id="txt">예매율 8.9% | 개봉일 2025.01.22</p>
+        <div id="row4">
+          <div class="btn1">
+            <img src="ico-heart.png" alt="" width="13px" />159
+          </div>
+          <div class="btn4">예매</div>
+        </div>
+      </div>
+      <div class="con">
+        <div class="container">
+          <img src="img4.jpg" alt="4" class="poster" />
+          <div class="overlay">
+            1908년 함경북도 신아산에서 안중근이 이끄는 독립군들은 일본군과의
+            전투에서 큰 승리를 거둔다. 대한의군 참모중장 안중근은 만국공법에
+            따라 전쟁포로인 일본인들을 풀어주게 되고, 이 사건으로 인해 독립군
+            사이에서
+          </div>
+        </div>
+        <div id="name">
+          <img src="15.png" alt="15" id="name3" />
+          <h3 id="name2">하얼빈</h3>
+        </div>
+        <p id="txt">예매율 7.5% | 개봉일 2021.12.24</p>
+        <div id="row4">
+          <div class="btn1">
+            <img src="ico-heart.png" alt="" width="13px" />1.4k
+          </div>
+          <div class="btn2">예매</div>
+          <div class="btn3"></div>
+        </div>
+      </div>
+      <div class="con">
+        <div class="container">
+          <img src="img5.jpg" alt="5" class="poster" />
+          <div class="overlay">
+            희망 없는 인생, 기회는 바로 그 곳에 있었다. 1997년 IMF의 후폭풍을
+            피하지 못한 국희(송중기)와 가족들은 지구 반대편 콜롬비아 보고타로
+            향한다. 낯선 땅에서 살아남기 위해, 한인 상인회의 권력을 쥔
+            박병장(권해효)
+          </div>
+        </div>
+        <div id="name">
+          <img src="15.png" alt="15" id="name3" />
+          <h3 id="name2">보고타: 마지막 기회의 땅</h3>
+        </div>
+        <p id="txt">예매율 7.1% | 개봉일 2024.12.31</p>
+        <div id="row4">
+          <div class="btn1">
+            <img src="ico-heart.png" alt="" width="13px" />337
+          </div>
+          <div class="btn4">예매</div>
+        </div>
+      </div>
+      <div class="con">
+        <div class="container">
+          <img src="img6.jpg" alt="6" class="poster" />
+          <div class="overlay">
+            "기대에 부응해야지?" 엄마 옥자의 열성과 본인의 타고난 욕심으로 교육
+            1번지 서울 대치동으로 위장 전입한 도현. 벤츠타고 다니는 부자이면서
+            장애 혜택을 받아먹던 친구에게 교환학생의 기회마저 뺏기고, 그 친구가
+            진
+          </div>
+        </div>
+        <div id="name">
+          <img src="15.png" alt="15" id="name3" />
+          <h3 id="name2">폭락</h3>
+        </div>
+        <p id="txt">예매율 5.4% | 개봉일 2025.01.15</p>
+        <div id="row4">
+          <div class="btn1">
+            <img src="ico-heart.png" alt="" width="13px" />84
+          </div>
+          <div class="btn4">예매</div>
+        </div>
+      </div>
+      <div class="con">
+        <div class="container">
+          <img src="img7.jpg" alt="7" class="poster" />
+          <div class="overlay">
+            동화 작가가 꿈이지만 현실은 불법 음란물 단속팀 새내기인 '단비'는
+            스타 작가를 찾던 성인 웹소설계 대부 '황대표'와 우연한 사고로 노예
+            계약을 맺게 되면서 하루아침에 19금 소설을 쓰게 된다. 생전 접한 적
+            없는 장르를
+          </div>
+        </div>
+        <div id="name">
+          <img src="15.png" alt="15" id="name3" />
+          <h3 id="name2">동화지만 청불입니다</h3>
+        </div>
+        <p id="txt">예매율 4.8% | 개봉일 2025.01.08</p>
+        <div id="row4">
+          <div class="btn1">
+            <img src="ico-heart.png" alt="" width="13px" />251
+          </div>
+          <div class="btn4">예매</div>
+        </div>
+      </div>
+      <div class="con">
+        <div class="container">
+          <img src="img8.jpg" alt="8" class="poster" />
+          <div class="overlay">
+            정체불명 초거대 우주 모함 도쿄 상공 출현! 내일 지구가 폭망해도
+            오늘을 즐기는 하이텐션 고교 라이프! 3년 전 그날 이후 조용하지만
+            착실히 멸망은 진행 중... 아이도 어른도 아닌 우리,
+          </div>
+        </div>
+        <div id="name">
+          <img src="15.png" alt="15" id="name3" />
+          <h3 id="name2">데드데드 데몬즈 디디…</h3>
+        </div>
+        <p id="txt">예매율 4% | 개봉일 2025.01.08</p>
+        <div id="row4">
+          <div class="btn1">
+            <img src="ico-heart.png" alt="" width="13px" />293
+          </div>
+          <div class="btn4">예매</div>
+        </div>
+      </div>
+      <div class="con">
+        <div class="container">
+          <img src="img1.jpg" alt="1" class="poster" />
+          <div class="overlay">
+            "연주할 때만 느껴지는 감정이었거든. 그게 널 만나면 느껴져" 유학
+            중이던 피아니스트 유준은 팔목 치료를 위해 한국에 교환 학생으로 오게
+            된다. 학교에 처음 간 그날, 신비로운 피아노 선율에 이끌려 도착한
+            연습실에서
+          </div>
+        </div>
+        <div id="name">
+          <img src="all.png" alt="all" id="name3" />
+          <h3 id="name2">보고타: 마지막 기회의 땅</h3>
+        </div>
+        <p id="txt">예매율 13% | 개봉일 2025.01.24</p>
+        <div id="row4">
+          <div class="btn1">
+            <img src="ico-heart.png" alt="" width="13px" />317
+          </div>
+          <div class="btn2">예매</div>
+          <div class="btn3"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
