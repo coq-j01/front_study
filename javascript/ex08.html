@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연습문제 - 테이블 출력하기</title>
+    <script>
+      //  +---+---+-------------+
+      // |학번|이름 | 국어점수  |
+      // +---+---+----------+
+      // |010|홍길동|   80    |
+      // +---+---+--------+
+      // |020|신사임당|   70    |
+      // +---+---+--------+
+      document.write("<table border='1px';>");
+      document.write("<tr height='30px';>");
+      document.write("<td width='40px';> <b>학번");
+      document.write("<td width='90px';> <b>이름");
+      document.write("<td width='90px';> <b>국어점수");
+      document.write("<tr height='30px';>");
+      document.write("<td width='40px';> 010");
+      document.write("<td width='90px';> 홍길동");
+      document.write("<td width='90px';> 80");
+      document.write("<tr height='30px';>");
+      document.write("<td width='40px';> 020");
+      document.write("<td width='90px';> 심사임당");
+      document.write("<td width='90px';> 70");
+      // for (var i = 0; i < 3; i++) {
+      //   //row(행)
+      //   document.write("<tr height='30px';>");
+      //   for (var j = 0; j < 3; j++) {
+      //     //col(열)
+      //     document.write("<td width='90px';> ");
+      //   }
+      // }
+      document.write("</table>");
+    </script>
+  </head>
+  <body></body>
+</html>
