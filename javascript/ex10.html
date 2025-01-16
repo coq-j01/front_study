@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>형 변환 : number타입과 string타입</title>
+    <script>
+      // number -> string : String()
+      let num1 = 456; //number타입 확정
+      document.write(typeof num1 + "<br>");
+      let str1 = String(num1);
+      document.write(typeof str1 + "<br>");
+
+      // string -> number : Number()
+      let str2 = "123"; //아라비아숫자 0~9이어야 됨.
+      document.write(typeof str2 + "<br>");
+      let num2 = Number(str2);
+      document.write(typeof num2 + "<br>");
+
+      //  예외적인 방법(비추천 : 가독성이 좋지 않음)
+      let num3 = "123" * 1;
+      document.write(typeof num3 + "<br>"); // number타입
+      let num4 = +"123";
+      document.write(typeof num4 + "<br>"); // number타입
+      let num5 = -"123";
+      document.write(typeof num5 + "<br>"); // number타입
+    </script>
+  </head>
+  <body></body>
+</html>
