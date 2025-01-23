@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>반장 선거</title>
+    <script>
+      let vote = prompt("반장을 투표해주세요").split(" ");
+      let num = {};
+      let max = Number.MIN_SAFE_INTEGER;
+      let name;
+      for (let i = 0; i < vote.length; i++) {
+        if (num[vote[i]] >= 1) {
+          num[vote[i]]++;
+          if (max < num[vote[i]]) {
+            max = num[vote[i]];
+            name = vote[i];
+          }
+        } else {
+          num[vote[i]] = 1;
+          if (max < num[vote[i]]) {
+            max = num[vote[i]];
+            name = vote[i];
+          }
+        }
+      }
+      document.write(name + "(이)가 총 " + max + "표로 반장이 되었습니다.");
+    </script>
+  </head>
+  <body></body>
+</html>

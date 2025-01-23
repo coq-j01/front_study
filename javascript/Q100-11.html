@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>자릿수 구하기 - 연산자</title>
+    <script>
+      let num = Number(prompt("숫자를 입력하세요"));
+      document.write("백의 자릿수 " + Math.floor(num / 100) + "<br>");
+      num = num % 100;
+      document.write("십의 자릿수 " + Math.floor(num / 10) + "<br>");
+      num = num % 10;
+      document.write("일의 자릿수 " + num + "<br>");
+    </script>
+  </head>
+  <body></body>
+</html>

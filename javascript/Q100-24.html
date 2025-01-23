@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>행성 문제2 - if문 배열</title>
+    <script>
+      // let kor = [
+      //   "수성",
+      //   "금성",
+      //   "지구",
+      //   "화성",
+      //   "목성",
+      //   "토성",
+      //   "천왕성",
+      //   "해왕성",
+      // ];
+      // let eng = [
+      //   "Mercury",
+      //   "Venus",
+      //   "Earth",
+      //   "Mars",
+      //   "Jupiter",
+      //   "Saturn",
+      //   "Uranus",
+      //   "Neptune",
+      // ];
+      // let str = prompt("행성이름을 입력하세요.");
+      // for (let i = 0; i < kor.length; i++) {
+      //   if (kor[i] == str) {
+      //     document.write(eng[i]);
+      //     break;
+      //   }
+      // }
+      // 다른 방법
+      const planets = {
+        수성: "Mercury",
+        금성: "Venus",
+        지구: "Earth",
+        화성: "Mars",
+        목성: "Jupiter",
+        토성: "Saturn",
+        천왕성: "Uranus",
+        해왕성: "Neptune",
+      };
+      let str = prompt("행성이름을 입력하세요.");
+      document.write(planets[str]);
+    </script>
+  </head>
+  <body></body>
+</html>

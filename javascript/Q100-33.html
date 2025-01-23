@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Factory 함수 사용하기</title>
+    <script>
+      function one(n) {
+        function two(x) {
+          // let result = x;
+          // for (let i = 1; i < n; i++) {
+          //   result *= x;
+          // }
+          // return result;
+          return Math.pow(x, n);
+        }
+        return two;
+      }
+
+      const a = one(2);
+      const b = one(3);
+      const c = one(4);
+
+      console.log(a(10));
+      console.log(b(10));
+      console.log(c(10));
+    </script>
+  </head>
+  <body></body>
+</html>

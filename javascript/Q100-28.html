@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>문자열 속 문자 찾기</title>
+    <script>
+      let str = prompt("문장을 입력해주세요").split("");
+      let find = prompt("찾을 단어를 입력하세요").split("");
+      let chk = true;
+
+      for (let i = 0; i <= str.length - find.length; i++) {
+        if (str[i] == find[0]) {
+          for (let j = 1; j < find.length; j++) {
+            if (str[i + j] != find[j]) {
+              chk = false;
+              break;
+            }
+          }
+          if (chk == true) {
+            document.write(i);
+          }
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

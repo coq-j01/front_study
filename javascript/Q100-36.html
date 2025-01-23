@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>호준이의 아르바이트</title>
+    <script>
+      let grade = prompt("성적을 입력하세요").split(" ").map(Number);
+      grade.sort(function (a, b) {
+        return b - a;
+      });
+      let ranking = {};
+      let last = 0; // 이전 확인한 점수
+      let rank = 0; // 등수
+      for (let i = 0; i < grade.length; i++) {
+        if (grade[i] == last) {
+          ranking[rank]++;
+        } else {
+          rank++;
+          ranking[rank] = 1;
+          last = grade[i];
+        }
+      }
+      console.log(ranking);
+      document.write(ranking[1] + ranking[2] + ranking[3]);
+    </script>
+  </head>
+  <body></body>
+</html>

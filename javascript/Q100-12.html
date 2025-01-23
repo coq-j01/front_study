@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>평균 점수</title>
+    <script>
+      let str = prompt("국어, 수학, 영어 성적 입력하세요");
+      let grade = str.split(" ");
+      let sum = 0;
+      for (let i = 0; i < 3; i++) {
+        sum += Number(grade[i]);
+      }
+      document.write("평균 점수 : " + Math.floor(sum / 3));
+    </script>
+  </head>
+  <body></body>
+</html>
