@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>테이블 입력값 조작하기</title>
+    <script>
+      //연습문제
+      //값 지우기 버튼을 클릭하면, 왼쪽의 입력창의 값을 지우시오.
+      window.onload = () => {
+        makeTable();
+        //다른 방법
+        // var btnArray = document.getElementsByTagName("button");
+        // for (var i = 0; i < btnArray.length; i++) {
+        //   //화살표 함수에는 this가 없으므로 function으로
+        //   //이벤트를 등록합니다.
+        //   btnArray[i].onclick = function () {
+        //     //콘솔에 몇번 버튼이 클릭되었는지 출력하고,
+        //     //왼쪽의 입력창의 값을 지우시오.
+        //     console.log("i:" + i);
+        //     console.log(this.value + "번째 클릭됨.");
+        //     var input = document.getElementById("input" + this.value);
+        //     input.value = "";
+        //   };
+      };
+      function makeTable() {
+        //document.writeln함수를 이용하여
+        //동적으로 테이블을 작성하시오.
+        document.writeln("<table border=1>");
+        for (var i = 1; i <= 10; i++) {
+          document.writeln("<tr>");
+          document.writeln("<td>목록" + i + "</td>");
+          document.writeln('<td><input id="input' + i + '" type="text"></td>');
+          document.writeln(
+            '<td><button id="btn' +
+              i +
+              '" value="' +
+              i +
+              '" onclick="btnclick(' +
+              i +
+              ')">값지우기</button></td>'
+          );
+          document.writeln("</tr>");
+        }
+        document.writeln("</table");
+      }
+      function btnclick(i) {
+        let input = document.getElementById("input" + i);
+        input.value = "";
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
