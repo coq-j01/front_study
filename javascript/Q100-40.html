@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>꽃이름을 말해주세요 - 배열의 foreach()함수</title>
+    <script>
+      var names = ["장미", "수선화", "코스모스"];
+      let maxl = Number.MIN_SAFE_INTEGER;
+      let maxname;
+      names.forEach((flower) => {
+        document.write(flower + "<br>");
+        if (flower.length > maxl) {
+          maxl = flower.length;
+          maxname = flower;
+        }
+      });
+      document.write("가장 긴 단어는 " + maxname + "입니다.");
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>오타 수정하기</title>
+    <script>
+      let str = prompt("영어입력하세요").split("");
+      document.write(change_e(str).join("")); // 배열을 string 으로 바꿔 출력하기
+      function change_e(str) {
+        for (let i = 0; i < str.length; i++) {
+          if (str[i] == "q") {
+            str[i] = "e";
+          }
+        }
+        return str;
+      }
+      // 정규식 사용
+      const word = prompt("입력하세요.");
+
+      console.log(word.replace(/q/gi, "e"));
+    </script>
+  </head>
+  <body></body>
+</html>

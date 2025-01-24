@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>놀이동산에 가자</title>
+    <script>
+      const maxw = prompt("제한 무게를 입력하세요");
+      const friend = prompt("총 인원을 입력하세요");
+      let num = 0;
+      let total = 0;
+
+      for (let i = 0; i < friend; i++) {
+        total += Number(prompt(i + 1 + "번째 친구 몸무게를 입력하세요"));
+        if (maxw >= total) {
+          num++;
+        } else {
+          document.write(num + "명");
+          break;
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

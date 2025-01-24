@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>소수판별</title>
+    <script>
+      let num = Number(prompt("숫자를 입력하세요"));
+      let bool = true;
+      for (let i = 2; i < num; i++) {
+        if (num % i == 0) {
+          bool = false;
+          break;
+        }
+      }
+      if (bool == true) {
+        document.write("YES");
+      } else {
+        document.write("NO");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

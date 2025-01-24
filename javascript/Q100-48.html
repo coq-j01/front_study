@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>대소문자 바꿔서 출력하기</title>
+    <script>
+      let str = prompt("문자열을 입력하세요").split("");
+      let result = "";
+      for (string of str) {
+        let upper = string.toUpperCase();
+        if (string != upper) {
+          result = result.concat(upper);
+        } else {
+          let lower = string.toLowerCase();
+          result = result.concat(lower);
+        }
+      }
+      document.write(result);
+    </script>
+  </head>
+  <body></body>
+</html>

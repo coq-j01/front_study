@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getTime()함수 사용하기</title>
+    <script>
+      let day = new Date();
+      let year = Math.floor(day.getTime() / (365 * 24 * 60 * 60 * 1000));
+      console.log(day.getTime());
+      console.log(365 * 24 * 60 * 60);
+      document.write("현재년도는? " + (1970 + year));
+    </script>
+  </head>
+  <body></body>
+</html>

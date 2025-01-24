@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>각 자리수의 합 2</title>
+    <script>
+      let strnum = "";
+      for (let i = 1; i <= 20; i++) {
+        strnum = strnum.concat(i.toString());
+      }
+      let sum = 0;
+      let num = strnum.split("").map(Number);
+      for (var number of num) {
+        sum += number;
+      }
+      document.write(sum);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>set 자료형의 응용</title>
+    <script>
+      const people = {
+        이호준: "01045442903",
+        이호상: "01051442904",
+        이준호: "01050342904",
+        이호준: "01050442903",
+        이준: "01050412904",
+        이호: "01050443904",
+        이호준: "01050442903",
+      };
+      let num = 0;
+      for (let name in people) {
+        //console.log(`${name}`); //`를 눌러야 함 ''이게 아님
+        // 같은 key 값 알아서 중복 제거 됨
+        console.log(name);
+        document.write(name + "<br>");
+        num++;
+      }
+      document.write(num + "명");
+    </script>
+  </head>
+  <body></body>
+</html>
