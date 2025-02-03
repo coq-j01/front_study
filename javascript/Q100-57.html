@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1의 개수</title>
+    <script>
+      let num1 = 0;
+      for (let i = 0; i <= 1000; i++) {
+        let num = i.toString().split("");
+        for (n of num) {
+          // console.log(n);
+          if (n == "1") num1++;
+        }
+      }
+      document.write(num1);
+    </script>
+  </head>
+  <body></body>
+</html>

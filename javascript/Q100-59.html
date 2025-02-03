@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>빈칸채우기</title>
+    <script>
+      let str = prompt("문자열을 입력하세요");
+      console.log(str.length);
+      let half = Math.floor((50 - str.length) / 2);
+      console.log(half);
+      // str.padStart(10,"-") str 총 길이가 10이하일때
+      // 총 길이가 10이 될 때까지 앞쪽 빈칸을 -로 채워줌
+      // str의 원래길이 + 채워진"-"의 개수 = 10
+      str = str.padStart(half + str.length, "=");
+      str = str.padEnd(half + str.length, "=");
+      document.write(str);
+    </script>
+  </head>
+  <body></body>
+</html>

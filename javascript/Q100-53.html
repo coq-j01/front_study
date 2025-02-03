@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>괄호 문자열</title>
+    <script>
+      let string = prompt("괄호를 입력하세요").split("");
+      let bool = true;
+      let count1 = 0; // 소괄호()
+      // let count2 = 0;// 중괄호{}
+      // let count3 = 0;// 대괄호[]
+      for (str of string) {
+        if (str == "(") {
+          count1++;
+          symbol1.push(str);
+        } else {
+          count1--;
+          if (count1 < 0) {
+            // ()))((
+            bool = false;
+            break;
+          }
+        }
+      }
+      if (count1 != 0) {
+        bool = false;
+      }
+      if (bool == true) {
+        document.write("YES");
+      } else {
+        document.write("NO");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

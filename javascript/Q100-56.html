@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>객체의 함수 응용(중급)</title>
+    <script>
+      nationWidth = {
+        korea: 220877,
+        Rusia: 17098242,
+        China: 9596961,
+        France: 543965,
+        Japan: 377915,
+        England: 242900,
+      };
+      let min = Number.MAX_SAFE_INTEGER;
+      let kor = nationWidth["korea"];
+      let nation;
+      for (var nat in nationWidth) {
+        if (nat != "korea") {
+          if (min > nationWidth[nat] - kor) {
+            min = nationWidth[nat] - kor;
+            nation = nat;
+          }
+        }
+      }
+      document.write(nation + " " + min);
+    </script>
+  </head>
+  <body></body>
+</html>

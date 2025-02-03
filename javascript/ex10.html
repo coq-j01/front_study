@@ -15,13 +15,30 @@
       let num2 = Number(str2);
       document.write(typeof num2 + "<br>");
 
+      //  이전방법
+      let str3 = "123.45";
+      let num5 = parseInt(str3);
+      let num6 = parseFloat(str3);
+      document.write(num5 + "<br>");
+      document.write(num6 + "<br>");
+
+      // 에러발생
+      let str4 = "abc";
+      let num7 = parseInt(str4); // NaN(Not a Number) 값을 처리됨.
+      document.write(num7 + "<br>");
+
+      //NaN 발생 예
+      // 1. 숫자로 변환할 수 없는 값 "abc"
+      // 2. 0으로 나누었을 때 10/0
+      // 3. undefined에 연산할 때 undefined * 5
+      // 4. 잘못된 수학연산 (음수의 제곱근) Math.sqrt(-1)
+      document.write(isNaN(num7) + "<br>");
+
       //  예외적인 방법(비추천 : 가독성이 좋지 않음)
       let num3 = "123" * 1;
       document.write(typeof num3 + "<br>"); // number타입
       let num4 = +"123";
       document.write(typeof num4 + "<br>"); // number타입
-      let num5 = -"123";
-      document.write(typeof num5 + "<br>"); // number타입
     </script>
   </head>
   <body></body>

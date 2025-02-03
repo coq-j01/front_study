@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연속되는 수</title>
+    <script>
+      let num = prompt("연속되는 수를 입력해주세요").split(" ").map(Number);
+      let bool = true;
+      let last = num[0];
+      for (let i = 1; i < num.length; i++) {
+        if (num[i] == last + 1) {
+          last = num[i];
+        } else {
+          bool = false;
+          break;
+        }
+      }
+      if (bool == true) {
+        document.write("YES");
+      } else {
+        document.write("NO");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
