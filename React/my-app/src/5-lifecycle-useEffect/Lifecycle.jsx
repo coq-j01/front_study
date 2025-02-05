@@ -14,3 +14,109 @@
 // componentDidMount(): 컴포넌트가 처음 렌더링된 후 실행
 // componentDidUpdate(): 컴포넌트가 업데이트된 후 실행
 // componentWillUnmount(): 컴포넌트가 언마운트(제거)되기 직전에 실행
+
+import React, { Component, useEffect, useState } from "react";
+
+// extends 상속
+export class LifecycleClass extends Component {
+  constructor(props) {
+    // 생성자
+    // 자식생성자 함수
+    super(props); // 부모생성자 함수 호출
+    this.state = {
+      //상태변수 선언
+      count: 0,
+    };
+  }
+
+  // 마운트 발생시 호출됨.
+  componentDidMount() {
+    console.log("컴퍼넌트가 마운트 되었습니다.");
+  }
+  // 언마운트 발생시 호출됨.
+  componentWillUnmount() {
+    console.log("컴퍼넌트가 언마운트 되었습니다.");
+  }
+  // 상태나 props가 변경 시 호출됨
+  componentDidUpdate() {
+    console.log(`컴퍼넌트가 업데이트 되었습니다.${this.state.count}`);
+  }
+  render() {
+    return (
+      <div>
+        <h1>리액트 라이프사이클(클래스형)</h1>
+        <p>Count: {this.state.count}</p>
+        <button
+          onClick={() => {
+            // setState : 클래스형 컴퍼넌트의 상태변경 함수
+            this.setState({ count: this.state.count + 1 });
+          }}
+        >
+          +1
+        </button>
+      </div>
+    );
+  }
+}
+// 함수형 컴포넌트에서는 useEffect Hook로 라이프사이클을 관리
+// useEffect는 다음과 같은 역할을 할 수 있습니다:
+// useEffect(() => {}, []): 컴포넌트가 마운트될 때 실행
+// useEffect(() => {}, [state]): 의존성 배열이 변경될 때 실행
+// return () => {}: 컴포넌트가 언마운트될 때 실행 (클린업 함수)
+
+// 함수형 컴퍼넌트
+export function LifecycleFunc() {
+  const [count, setcount] = useState(0);
+  const [total, setTotal] = useState(0);
+
+  // 마운트 && 언마운트
+  useEffect(() => {
+    console.log("컴퍼넌트가 마운트되었습니다.");
+    return () => {
+      console.log("컴퍼넌트가 언마운트되었습니다.");
+    };
+  }, []); // 빈배열을 넣으면, 마운트/언마운트 시 한번만 호출
+  // 업데이트
+  useEffect(() => {
+    console.log("컴퍼넌트가 업데이트되었습니다.");
+  }, [count]); //의존성 상태변수 배열을 설정한다.
+  //count가 변경될 때 실행
+  return (
+    <div>
+      <h1>리액트 라이프사이클(함수형 컴퍼넌트)</h1>
+      <p>Count : {count}</p>
+      <button
+        onClick={() => {
+          setcount(count + 1);
+        }}
+      >
+        +1
+      </button>
+    </div>
+  );
+}
+
+// 부모 컴퍼넌트
+export function Lifecycle() {
+  //       상태변수  ,  상태설정함수                 초기값
+  const [showComponent, setShowComponent] = useState(true);
+
+  // 조건부 렌더링
+  // 1. if else
+  // 2. 삼항연산자
+  // 3. 논리연산자(&& ||)
+  return (
+    // true면 div보이고 false면 안 보임
+    <div style={{ padding: "20px" }}>
+      {showComponent && <LifecycleClass />}
+      <button
+        onClick={() => {
+          setShowComponent(!showComponent);
+          // setShowComponent(!showComponent ? true : false);
+        }}
+      >
+        {showComponent ? "컴퍼넌츠 제거" : "컴퍼넌트 추가"}
+      </button>
+    </div>
+  );
+}
