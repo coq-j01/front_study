@@ -6,6 +6,9 @@
 // - props로 name과 isMorning을 받아 인삿말을 출력합니다.
 // - isMorning이 true이면 "좋은 아침입니다, [name]님!"
 //   그렇지 않으면 "좋은 저녁입니다, [name]님!"
+
+import { useState } from "react";
+
 // - 부모 컴포넌트에서 두 가지 경우를 모두 테스트하세요.
 export function Greeting(props) {
   if (props.isMorning === true) {
@@ -23,15 +26,14 @@ export function Greeting(props) {
 // - "한 살 더 먹기" 버튼을 클릭하면 나이가 증가합니다.
 // - 부모 컴포넌트에서 두 명의 사용자 상태를 관리합니다.
 export function UserCard(props) {
-  let Myage = props.age;
+  const [currentage, setage] = useState(props.age); // 상태로 age 관리
   function Plusage() {
-    Myage++;
-    // Myage 증가했을 때 다시 렌더링을 해야,,?
+    setage(currentage + 1);
   }
   return (
     <div>
       <p>
-        {props.name}님, {Myage}살이십니다.
+        {props.name}님, {currentage}살이십니다.
       </p>
       <button onClick={Plusage}>한살 더 먹기</button>
     </div>
