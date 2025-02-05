@@ -96,6 +96,8 @@ export function Openfetch() {
   const [data, setData] = useState([]);
   useEffect(() => {
     // 비동기 함수로 API 호출
+    // async/await 구문 : JS에서 비동기적인 처리를 할 때 사용하는 구문.
+    // promise/then 구문 :
     const fetchData = async () => {
       try {
         const response = await fetch(
@@ -103,6 +105,7 @@ export function Openfetch() {
         );
         const jsonData = await response.json(); // JSON 변환
         setData(jsonData); // 상태 업데이트
+        // 여기서 상위 10개 지정 가능 setData(jsonData.slice(0, 10));
       } catch (error) {
         console.error("데이터 가져오기 오류:", error);
       }
@@ -115,29 +118,64 @@ export function Openfetch() {
     <div>
       <h1>OpenAPI 데이터</h1>
       <ul>
-        {data.slice(0, 10).map((post) => (
-          <li key={post.id}>
-            <b>id:</b>
-            {post.id}
-            <br />
-            <b>title:</b>
-            {post.title}
-            <br />
-            <b>body:</b>
-            {post.body}
-          </li>
-        ))}
+        {data.slice(0, 10).map(
+          (
+            post // 상위 10개만 출력
+          ) => (
+            <li key={post.id}>
+              <b>id:</b>
+              {post.id}
+              <br />
+              <b>title:</b>
+              {post.title}
+              <br />
+              <b>body:</b>
+              {post.body}
+            </li>
+          )
+        )}
       </ul>
     </div>
   );
 }
 
-// axios
-export function Openaxios() {
+// axios (강사님꺼 참고)
+export function DataFetcherAxios() {
+  const [data, setData] = useState([]);
+
   useEffect(() => {
-    const axiosdata = async () => {
-      const respon = axios("https://jsonplaceholder.typicode.com/posts");
-      return (await respon).formData;
+    // 비동기 함수로 API 호출
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://jsonplaceholder.typicode.com/posts"
+        );
+        setData(response.data.slice(0, 10)); // 상위 10개 항목만 표시
+      } catch (error) {
+        console.error("데이터 로드 중 오류 발생:", error);
+      }
     };
-  });
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <h1>데이터 로드</h1>
+      <ul>
+        {data.map((item) => (
+          <li key={item.id}>
+            <b>id:</b>
+            {item.id}
+            <br />
+            <b>title:</b>
+            {item.title}
+            <br />
+            <b>body:</b>
+            {item.body}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
