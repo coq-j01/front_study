@@ -22,6 +22,21 @@ export function Greeting(props) {
 // - name, age를 props로 받아 초기 값을 표시합니다.
 // - "한 살 더 먹기" 버튼을 클릭하면 나이가 증가합니다.
 // - 부모 컴포넌트에서 두 명의 사용자 상태를 관리합니다.
+export function UserCard(props) {
+  let Myage = props.age;
+  function Plusage() {
+    Myage++;
+    // Myage 증가했을 때 다시 렌더링을 해야,,?
+  }
+  return (
+    <div>
+      <p>
+        {props.name}님, {Myage}살이십니다.
+      </p>
+      <button onClick={Plusage}>한살 더 먹기</button>
+    </div>
+  );
+}
 
 // 문제 3: 객체 리스트 렌더링
 // 목표: 객체로 구성된 리스트를 렌더링하고, 추가 정보를 중첩된 형태로 출력합니다.
