@@ -10,7 +10,8 @@ function App() {
   // return <Ex.Item />;
   // return <Ex.ClickFunc />;
   // return <Ex.Card />;
-  return <Ex2.Greeting name="정채빈" isMorning={false} />;
+  // return <Ex2.Greeting name="정채빈" isMorning={false} />;
+  return <Ex2.UserCard name="정채빈" age={25} />;
 }
 
 export default App;

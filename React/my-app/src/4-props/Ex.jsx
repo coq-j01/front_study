@@ -17,7 +17,12 @@ function Greeting(props) {
   );
 }
 export function Hello() {
-  return <Greeting name="정채빈" />;
+  return (
+    <>
+      <Greeting name="정채빈" />
+      <Greeting name="홍길동" />
+    </>
+  );
 }
 
 // 2. 문제 2: 여러 Props 전달하기
@@ -88,7 +93,9 @@ export function ClickFunc() {
 // 요구사항:
 // - `InfoCard`라는 자식 컴포넌트를 작성하세요.
 // - `title`이라는 `props`와 `children`을 사용하여 제목과 본문 콘텐츠를 렌더링합니다.
-// - 부모 컴포넌트에서 두 개의 카드를 렌더링하세요.
+// - 부모 컴포넌트에서 두 개의 카드를 렌더링하세요.]
+// 자식 컴퍼넌트(child component)
+// 자식 요소 (child element)
 function InfoCard(props) {
   return (
     <div>
