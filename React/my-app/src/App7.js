@@ -1,6 +1,5 @@
 import React from "react";
 import * as E from "./7-hook/Hook";
-import * as Ex from "./7-hook/Ex";
 
 function App() {
   // return <E.Counter1 />;
@@ -12,7 +11,8 @@ function App() {
   // return <E.Counter7 />;
   // return <Ex.Ex1 />;
   // return <Ex.Ex2 />;
-  return <Ex.Ex3 />;
+  // return <Ex.Ex3 />;
+  return <Counter />;
 }
 
 export default App;
