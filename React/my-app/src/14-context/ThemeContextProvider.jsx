@@ -1,9 +1,9 @@
 import { useState, useCallback } from "react";
 import ThemeContext from "./ThemeContext";
 import ThemeContextUseContext from "./ThemeContextUseContext";
-
-function ThemeContextProvider() {
-  const [theme, setTheme] = useState("light");
+import ThemeContextConsumer from "./ThemeContextConsumer";
+function ThemeContextProvider({ initTheme }) {
+  const [theme, setTheme] = useState(initTheme);
 
   // useMemo : 값이 저장해 놓음
   // useCallback : 함수를 저장해 놓음
@@ -17,6 +17,7 @@ function ThemeContextProvider() {
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       <ThemeContextUseContext />
+      <ThemeContextConsumer />
     </ThemeContext.Provider>
   );
 }
