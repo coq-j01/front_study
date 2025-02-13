@@ -274,13 +274,13 @@ function MovieList() {
           </div>
           <div className="flex flex-row mt-3">
             <img
-              src="https://img.megabox.co.kr/static/pc/images/common/txt/ALL_46x46.png"
+              src="https://img.megabox.co.kr/static/pc/images/common/txt/15_46x46.png"
               alt=""
               className="w-[10%] mr-3"
             />
-            <p className="font-semibold text-l">말할 수 없는 비밀</p>
+            <p className="font-semibold text-l">미드나잇 인 파리</p>
           </div>
-          <p className="w-full text-sm mt-2">예매율 7.6% | 개봉일 2025.02.12</p>
+          <p className="w-full text-sm mt-2">예매율 6.9% | 개봉일 2025.02.12</p>
           <div className="flex flex-row justify-between mt-2 pl-0 pr-1">
             <div
               role="button"
@@ -291,7 +291,7 @@ function MovieList() {
                 alt=""
                 className="object-cover object-left w-5 h-4 ml-0.5 pr-0.5"
               />
-              <p className="flex ml-1 items-center text-sm">714</p>
+              <p className="flex ml-1 items-center text-sm">719</p>
             </div>
             <div
               role="button"
