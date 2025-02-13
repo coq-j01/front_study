@@ -1,7 +1,7 @@
 function Nav() {
   return (
     <div className="border-t border-purple-900 bg-gray-100">
-      <div className="flex flex-row ml-[9%] p-2">
+      <div className="flex flex-row ml-[14%] p-2">
         <img
           src="https://img.megabox.co.kr/static/pc/images/common/bg/bg-location-home.png"
           alt=""

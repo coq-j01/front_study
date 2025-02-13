@@ -1,6 +1,6 @@
 function MovieNav() {
   return (
-    <div className=" ml-[9%] mr-[9%]">
+    <div className=" ml-[15%] mr-[15%]">
       <p className="text-3xl font-extrabold mt-10 mb-10">전체영화</p>
       <div className="flex justify-between w-full h-10 mb-10">
         <div className="flex w-[20%] border-t-2 border-l-2 border-r-2 border-t-purple-900 border-l-purple-900 border-r-purple-900 justify-center items-center">

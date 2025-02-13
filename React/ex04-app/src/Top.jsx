@@ -2,7 +2,7 @@ import megabox from "./megabox.png";
 function Top() {
   return (
     <div>
-      <div className="flex justify-between m-3 ml-[11%] mr-[11%]">
+      <div className="flex justify-between m-3 ml-[13%] mr-[13%]">
         <div className="flex flex-row">
           <a href="#" className="text-gray-500 mr-3 text-xs">
             VIP LOUNAGE
@@ -26,7 +26,7 @@ function Top() {
           </a>
         </div>
       </div>
-      <div className="flex justify-between m-3 ml-[10%] mr-[10%]">
+      <div className="flex justify-between m-3 ml-[15%] mr-[15%]">
         <div className="flex flex-row mt-3 ">
           <a href="#">
             <img
