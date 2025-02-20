@@ -5,6 +5,7 @@ import Top from "./Top";
 import Nav from "./Nav";
 import MovieNav from "./MovieNav";
 import MovieList from "./MovieList";
+import Pedometer from "./Pedometer";
 import "./App.css";
 
 function App() {
