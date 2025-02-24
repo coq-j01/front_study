@@ -3,7 +3,9 @@
     "target": "ESNext",
     "module": "ESNext",
     "outDir": "dist",
-    "strict": true,
+    // "strict": true,
+    // "noImplicitAny": true,  //암묵적X
+    // "strictNullChecks":true, //null허용X
     "moduleDetection": "force",
     "skipLibCheck": true
   },
