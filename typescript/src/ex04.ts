@@ -49,7 +49,7 @@ let countryCodes2:CountryCodes2={
   Korea:"ko",
   UnitedState:"us",
   UnitedKingdom:"uk",
-  //Japan:123 //타입오류
+  //Japan:123 //타입오류 
 }
 type CountryCodes3 = {
   [key:string]:string
