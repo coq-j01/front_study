@@ -6,6 +6,7 @@
 // ex) 자동차 게임
 let myCarType = 0; //0 세단, 1 스포츠카, 2 SUV, 3 지프
 
+// enum
 enum CarType{
   // 기본값 0부터 자동 대입
   Sedan, //0

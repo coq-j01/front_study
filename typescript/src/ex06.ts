@@ -39,7 +39,7 @@ function myFunc2():number{
 }
 
 // never 타입
-// 존재하지 않는, 말도 안되는, 불가능 한
+// 존재하지 않는, 말도 안되는, 불가능한
 function myFunc3():never{
   // ex) 무한루프 -> 반환할 수 없는 상황
   while(true){}

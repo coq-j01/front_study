@@ -43,3 +43,9 @@ const add2:Operation = (a,b)=>a+b
 const sub2:Operation = (a,b)=>a-b
 const mul2:Operation = (a,b)=>a*b
 const div2:Operation = (a,b)=>a/b 
+
+// 호출 시그니처
+type Operation2 = {
+  (a:number, b:number):number
+}
+const add3:Operation2 = (a,b)=>a+b

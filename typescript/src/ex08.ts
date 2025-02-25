@@ -43,6 +43,6 @@ console.log(len) //len=null이라 실행 시 에러 뜸
 const len2:number = post.content?.length
 console.log(len2) //len=undefined
 
-// ! : Not Null 단언 ; 개발자가 null이 아님을 확신하고 쓰는 것.
+// ! : Not Null 단언 ; 개발자가 null이 아님을 확신하고 쓰는 것
 const len3:number = post.content!.length
 console.log(len3) //error

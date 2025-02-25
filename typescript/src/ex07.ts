@@ -48,7 +48,7 @@ let inter1 : Intersection={
 }
 
 // 객체 타입의 호환성
-let dog:Dog
+let  dog:Dog
 let person:Person
 
 dog = inter1 //타입 호환됨
