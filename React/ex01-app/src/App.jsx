@@ -6,17 +6,20 @@ import Nav from "./Nav";
 import Section from "./Section";
 import Aside from "./Aside";
 import Footer from "./Footer";
+import Emoji from "./emojichk";
+import "./App.css";
 
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header />
       <Nav />
       <div className="flex">
         <Section />
         <Aside />
       </div>
-      <Footer />
+      <Footer /> */}
+      <Emoji />
     </>
   );
 }
