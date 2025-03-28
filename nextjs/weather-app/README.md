@@ -37,4 +37,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## 참고
 
+weather-api
 https://codinggangsa.notion.site/4-API-1be5faaa340480bcbf8bc1a474f7a23a
+에러,로딩 페이지
+https://codinggangsa.notion.site/6-1be5faaa340480b1b14fc9dd90517c1e
+날씨 데이터 조회
+https://codinggangsa.notion.site/7-2-1be5faaa340480b78ce6d7c3bea0ba09
