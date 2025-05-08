@@ -4,15 +4,19 @@ let user = {
     name: "이정환",
 };
 user.name = "정채빈";
-let dog = {
-    name: "돌돌이",
-    color: "brown",
+user = {
+    //id를 모를 때
+    name: "홍길동",
 };
-let cat = {
-    name: "춘배",
-    color: "white",
+// let dog: {
+//   name: string;
+//   color: string;
+// } = {
+//   name: "돌돌이",
+//   color: "brown",
+// };
+let config = {
+    apiKey: "MY API KEY",
 };
-console.log(user.id, user.name);
-console.log(dog.name + dog.color);
-console.log(cat.name + cat.color);
 export {};
+// config.apiKey = "hacked"; //읽기 전용 속성이므로 apiKey에 할당 불가능!

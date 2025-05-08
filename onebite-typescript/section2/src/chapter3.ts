@@ -28,4 +28,4 @@ let config: {
   apiKey: "MY API KEY",
 };
 
-// config.apiKey = "hacked";
+// config.apiKey = "hacked"; //읽기 전용 속성이므로 apiKey에 할당 불가능!
