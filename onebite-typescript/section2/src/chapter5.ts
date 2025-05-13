@@ -56,4 +56,15 @@ const user6 = {
   name: "아무개",
   role: Role2.GUEST,
 };
-console.log(user4, user5, user6);
+// console.log(user4, user5, user6);
+
+enum Language {
+  korean = "ko",
+  english = "en",
+}
+const user7 = {
+  name: "이정환",
+  role: Role2.ADMIM,
+  language: Language.korean,
+};
+console.log(user7);
