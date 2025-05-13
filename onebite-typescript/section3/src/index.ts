@@ -1,2 +1,1 @@
-console.log("Helli New Project");
-export {};
+console.log("Hello New Project");
